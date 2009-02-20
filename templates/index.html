@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>App Engine IMIfied Endpoint</title>
+    <link rel="stylesheet" href="/assets/css/reset.css" type="text/css" media="all" charset="utf-8"/>
+    <link rel="stylesheet" href="/assets/css/common.css" type="text/css" media="all" charset="utf-8"/>
+
+</head>
+<body>
+    <div id="main">
+        <div id="head">
+            <h1>Using <a href="http://imified.com">IMIfied</a> and Google App Engine to build XMPP Applications</h1>
+            <p>Providing an Instant Messaging interface to your application is easier than you might think. And you don't have to wait for the upcoming XMPP API or ignore those using other networks.</p>
+            <p><a href="http://imified.com">IMIfied</a> provide a currently free service which provides a web hook like interface to an instant messaging bot. Try sending a message to <em>appengine-imified@bot.im</em>. This is just an example, you can find the code to add to your own applications at <a href="http://githib.com/garethr/appengine-imified/">githib.com/garethr/appengine-imified/</a></p>
+        </div>
+        {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>
+                <h2>{{message.userkey}} <span>({{message.network}})</span></h2>
+                <p>{{message.msg}}</p>
+            </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if debug %}
+            {% include "_form.html" %}
+        {% endif %}
+    </div>
+    <div id="foot">
+        <p>This application was originally build by Gareth Rushgroge of <a href="http://morethanseven.net">morethanseven.net</a>. The code can be found on <a href="http://github.com/garethr/appengine-imified">GitHub</a>.</p>
+    </div>
+</body>
+</html>

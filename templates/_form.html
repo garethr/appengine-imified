@@ -1,0 +1,27 @@
+<div id="debug">
+
+<p>You have DEBUG switched on in your settings file. This form is intended to ease local or offline development and simulates the HTTP POST from the IMIfied service.</p>
+
+<form action="/endpoint" method="post">
+    <div>
+        <label for="userkey">Userkey</label> 
+        <input type="text" name="userkey" id="userkey"/>
+    </div>
+    <div>
+        <label for="network">Network</label>
+        <input type="text" name="network" id="network"/>
+    </div>
+    <div>
+        <label for="step">Step</label>
+        <input type="text" name="step" id="step"/>
+    </div>
+    <div>
+         <label for="msg">Message</label>
+         <textarea name="msg" id="msg"></textarea>
+    </div>
+    <div class="submit">
+        <input type="submit" name="submit" value="Submit"/>
+    </div>
+</form>
+
+</div>
