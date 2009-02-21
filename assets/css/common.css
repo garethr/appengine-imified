@@ -24,6 +24,14 @@ html, body {
 #head {
     margin-bottom: 30px;
 }
+#head span {
+    color: #136DFF;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#head span:hover {
+    text-decoration: none;
+}
 #head h1 {
     font-size: 300%;
     font-family: Georgia;
@@ -52,10 +60,10 @@ ul {
 }
 ul li {
     margin-bottom: 15px;
-    background: #CCC;
+    background: #EEE;
     -webkit-border-radius: 10px;
     padding: 20px;
-    border-bottom: 1px solid #AAA;
+    border-bottom: 1px solid #CCC;
 }
 ul li h2 {
     margin-bottom: 5px;

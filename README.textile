@@ -2,11 +2,11 @@ Providing an Instant Messaging interface to your App Engine application is easie
 
 IMIfied provide a currently free service which provides a web hook like interface to an instant messaging bot. In order to experiment with this you'll need to sign up for a free account at "IMified":http://imified.com.
 
-You should be able to see a live example of this at "xmpp-imified.appspot.com":http://imified.appspot.com
+You should be able to see a live example of this at "imified-demo.appspot.com":http://imified-demo.appspot.com
 
 h2. Disclaimer
 
-The author of this software is in no way affiliated with IMIfied, I just think it's a cool service.
+The author of this software is in no way affiliated with IMified, I just think it's a cool service.
 
 h2. Licence
 

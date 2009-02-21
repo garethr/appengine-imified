@@ -1,19 +1,28 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <title>App Engine IMified Demo</title>
     <link rel="stylesheet" href="/assets/css/reset.css" type="text/css" media="all" charset="utf-8"/>
     <link rel="stylesheet" href="/assets/css/common.css" type="text/css" media="all" charset="utf-8"/>
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(function(){
+            $('#head p.more').hide();
+            var more_link = $('<span>More</span>').click(function() {
+                $(this).hide();
+                $('#head p.more').fadeIn();
+            }).appendTo('#head p:first');
+        });
+    </script>
 </head>
 <body>
     <div id="main">
         <div id="head">
             <h1>Using <a href="http://imified.com">IMified</a> and Google App Engine to build XMPP Applications</h1>
-            <p>Providing an Instant Messaging interface to your application is easier than you might think. And you don't have to wait for the upcoming XMPP API or ignore those using other networks.</p>
-            <p><a href="http://imified.com">IMified</a> provide a currently free service which provides a web hook like interface to an instant messaging bot. Try sending a message to <em>appengineimified@bot.im</em>. This is just an example, you can find the code to add to your own applications at <a href="http://githib.com/garethr/appengine-imified/">githib.com/garethr/appengine-imified/</a></p>
+            <p>Providing an Instant Messaging interface to your application is easier than you might think. And you don't have to wait for the upcoming XMPP API or ignore those using other networks. </p>
+            <p class="more"><a href="http://imified.com">IMified</a> provide a currently free service which provides a web hook like interface to an instant messaging bot. Try sending a message to <em>appengineimified@bot.im</em>. This is just an example, you can find the code to add to your own applications at <a href="http://githib.com/garethr/appengine-imified/">githib.com/garethr/appengine-imified/</a></p>
         </div>
         {% if messages %}
         <ul>
