@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import re
 import os
 import logging
 from datetime import datetime, timedelta
@@ -11,6 +12,8 @@ from google.appengine.api import memcache
 
 from models import Message
 import settings
+
+HTML_ELEMENTS = re.compile(r'<(/?).*?>')
 
 class Index(webapp.RequestHandler):
     """
@@ -48,10 +51,11 @@ class Index(webapp.RequestHandler):
 class IMified(webapp.RequestHandler):
     "This is the endpoint for the message from IMified"
     def post(self):
-        "We recieve post data from IMified"
+        "We receive post data from IMified"
         userkey = self.request.get('userkey')
         network = self.request.get('network')
-        msg = self.request.get('msg')
+        # remove any markup from messages
+        msg = HTML_ELEMENTS.sub('', self.request.get('msg'))
         step = self.request.get('step')
         try:
             # we try and create the message
