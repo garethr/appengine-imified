@@ -9,6 +9,7 @@ from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 from google.appengine.ext.webapp import template
 from google.appengine.api import memcache
+from google.appengine.api import mail
 
 from models import Message
 import settings
@@ -66,6 +67,11 @@ class IMified(webapp.RequestHandler):
                 step = int(step)
             )   
             message.put()
+            # send an email with the message on
+            mail.send_mail(sender="gareth.rushgrove@gmail.com",
+                          to="Gareth Rushgrove <gareth@morethanseven.net>",
+                          subject="New message posted on IMified demo",
+                          body=msg)
             # we just added a message so we need to clear our cache
             memcache.delete("index")
             # simple logging
