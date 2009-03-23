@@ -26,10 +26,10 @@ class Index(webapp.RequestHandler):
         # lets have some basic cachine just in case
         output = memcache.get("index")
         if output is None:
-            # we're only showing messages from within the last three days
+            # we're only showing messages from within the last four days
             # this is for demonstration purposes only and stops 
             # the demo getting swamped with messages
-            yesterday = datetime.today() - timedelta(3)
+            yesterday = datetime.today() - timedelta(4)
             
             # get all messages posted in the last day and order them
             # by the date posted
